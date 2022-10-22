@@ -20,12 +20,12 @@ const Images = ( {images}:any) => {
                             <div className="w-full p-2 break-inside-avoid mb-4">
                                 <a
                                     type="button"
-                                    className="cursor-pointer"
+                                    className="cursor-pointer w-full"
                                     onClick={() => {
                                         setIsVisible(true);
                                         setImage(image);
                                     }}>
-                                    <Image src={image.src.large} layout="responsive" width={1920} height={1080} alt={image.alt} quality={70} loading="lazy" className="" />
+                                    <Image src={image.src.large} layout="responsive" width={1920} height={1080} alt={image.alt} quality={70}/>
                                 </a>
                             </div>
                         </div>
