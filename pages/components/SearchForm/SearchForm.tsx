@@ -4,13 +4,11 @@ import { useRouter } from 'next/router';
 import { NextComponentType } from "next";
 import { setQuery } from "../../../utils/cookies";
 import searchImages from "../../../utils/searchImage";
-import { searchFormProps } from "../../../types";
+import { SearchFormProps } from "../../../types";
 
-const page = 2;
 
-const SearchForm: React.FC<searchFormProps> = ({ setImages,setPage,setHasMore }:any) => {
+const SearchForm: React.FC<SearchFormProps> = ({ setImages,setPage,setHasMore }:SearchFormProps) => {
 
-    const router = useRouter()
     const {
         register,
         handleSubmit,
@@ -29,7 +27,7 @@ const SearchForm: React.FC<searchFormProps> = ({ setImages,setPage,setHasMore }:
 
         setPage(1);
 
-        const images = await searchImages({setPage,setHasMore});
+        const images = await searchImages({setPage,setHasMore,setImages});
 
         setImages(images);
     }
