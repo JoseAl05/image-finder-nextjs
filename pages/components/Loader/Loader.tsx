@@ -1,5 +1,3 @@
-import { RiLoader3Fill } from "react-icons/ri";
-import { IconContext } from "react-icons";
 
 const Loader = () => {
     return (
