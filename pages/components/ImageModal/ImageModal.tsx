@@ -35,7 +35,7 @@ const ImageModal: React.FC<ImageModalProps> = ({ isVisible, onClose, image }: Im
                         </div>
                         <div className="flex justify-around items-center m-5">
                             <div className="w-1/2 h-full">
-                                <Image src={image.src.large} layout="responsive" width='100%' height='100%' alt={image.alt} quality={70} loading="lazy" className="" />
+                                <Image src={image.src.large} layout="responsive" width='100%' height='100%' alt={image.alt} quality={70} loading="lazy" className="object-cover" />
                             </div>
                             <div className="flex flex-col items-end">
                                 <h1 className="text-3xl text-white mb-10">Descargar</h1>
@@ -47,11 +47,12 @@ const ImageModal: React.FC<ImageModalProps> = ({ isVisible, onClose, image }: Im
                                     target="_blank"
                                     rel="noreferrer noopener">
                                     Original
+                                    <span></span>
                                 </a>
                                 <a
                                     type="button"
                                     href={image.src.large}
-                                    className="bg-green-700 p-2 w-24 rounded-md my-3 text-center text-lg transition-all hover:scale-110 hover:bg-blue-600"
+                                    className="bg-green-700 p-2 w-28 rounded-md my-3 text-center text-xl transition-all hover:scale-110 hover:bg-blue-600"
                                     download={`${image.alt}_${image.photographer}.jpg`}
                                     target="_blank"
                                     rel="noreferrer noopener">
@@ -60,7 +61,7 @@ const ImageModal: React.FC<ImageModalProps> = ({ isVisible, onClose, image }: Im
                                 <a
                                     type="button"
                                     href={image.src.medium}
-                                    className="bg-green-700 p-2 w-20 rounded-md my-3 text-center text-base transition-all hover:scale-110 hover:bg-blue-600"
+                                    className="bg-green-700 p-2 w-28 rounded-md my-3 text-center text-xl transition-all hover:scale-110 hover:bg-blue-600"
                                     download={`${image.alt}_${image.photographer}.jpg`}
                                     target="_blank"
                                     rel="noreferrer noopener">
@@ -69,11 +70,11 @@ const ImageModal: React.FC<ImageModalProps> = ({ isVisible, onClose, image }: Im
                                 <a
                                     type="button"
                                     href={image.src.small}
-                                    className="bg-green-700 p-2 w-16 rounded-md my-3 text-center text-sm transition-all hover:scale-110 hover:bg-blue-600"
+                                    className="bg-green-700 p-2 w-28 rounded-md my-3 text-center text-xl transition-all hover:scale-110 hover:bg-blue-600"
                                     download={`${image.alt}_${image.photographer}.jpg`}
                                     target="_blank"
                                     rel="noreferrer noopener">
-                                    Peque;o
+                                    Pequeño
                                 </a>
                             </div>
                         </div>

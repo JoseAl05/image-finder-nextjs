@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Link from 'next/link';
 import Head from 'next/head'
 import Banner from './components/Banner/Banner';
 import SearchForm from './components/SearchForm/SearchForm';
@@ -9,9 +10,10 @@ import searchImages from '../utils/searchImage';
 import { SearchFormProps } from '../types';
 import Loader from './components/Loader/Loader';
 import EndMessage from './components/EndMessage/EndMessage';
+import { motion } from 'framer-motion';
 
 
-const fetchNextImages = ({ page, setImages, setPage, setHasMore }: SearchFormProps) => async () => {
+const fetchNextImages = ({ page, setImages, setPage, setHasMore}: SearchFormProps) => async () => {
   const images = await searchImages({
     page,
     setPage,
@@ -36,7 +38,6 @@ const Home: NextPage = () => {
     setPage,
     setHasMore,
   }
-  console.log(hasMore);
   return (
     <>
       <Head>
@@ -44,9 +45,12 @@ const Home: NextPage = () => {
         <meta name="description" content="Page to find and download any image that you want!." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+    
+
+
       <Banner>
         <SearchForm {...searchFormProps} />
-        <InfiniteScroll dataLength={images.length} hasMore={hasMore} next={fetchNextImages({ page, setImages, setPage, setHasMore })} loader={<Loader />} endMessage={<EndMessage/>}>
+        <InfiniteScroll dataLength={images.length} hasMore={hasMore} next={fetchNextImages({ page, setImages, setPage, setHasMore })} loader={<Loader />} endMessage={<EndMessage />}>
           <Images images={images} />
         </InfiniteScroll>
       </Banner>

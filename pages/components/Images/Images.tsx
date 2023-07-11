@@ -25,7 +25,7 @@ const Images = ( {images}:any) => {
                                         setIsVisible(true);
                                         setImage(image);
                                     }}>
-                                    <Image src={image.src.large} layout="responsive" width={1920} height={1080} alt={image.alt} quality={70}/>
+                                    <Image src={image.src.large} layout="responsive" objectFit='cover' width={1920} height={1080} alt={image.alt} quality={70}/>
                                 </a>
                             </div>
                         </div>

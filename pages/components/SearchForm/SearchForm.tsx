@@ -14,7 +14,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ setImages,setPage,setHasMore }:
         handleSubmit,
         reset,
         formState,
-        formState: { errors, isSubmitSuccessful },
+        formState: { errors, isSubmitSuccessful }
     } = useForm();
 
     useEffect(() => {
@@ -48,7 +48,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ setImages,setPage,setHasMore }:
                         <input {...register("query", { required: true })} className="rounded-lg mt-10 p-2 w-full pl-10" onChange={handleChange} />
                         {errors.exampleRequired && <span>This field is required</span>}
                     </label>
-                    <button type="submit" className="text-white mt-5 bg-[#006482] p-1 text-lg rounded-lg w-1/2 opacity-70">Search!</button>
+                    <button type="submit" className="text-white mt-5 bg-neutral-600 p-1 text-lg rounded-lg w-1/2 opacity-70 transition hover:bg-cyan-500 hover:opacity-100">Search!</button>
                 </form>
             </div>
         </>

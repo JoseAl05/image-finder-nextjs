@@ -24,7 +24,7 @@ const getImages = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
 
-  await client.photos.search({ query, page })
+  await client.photos.search({ query, page})
   .then((result:any) => {
     const images = result.photos.map((image:ImageProps) => {
       return {
@@ -39,17 +39,7 @@ const getImages = async (req: NextApiRequest, res: NextApiResponse) => {
   .catch((error)=>{
     return res.send(error);
   })
-  // const images = result.photos.map((image:ImageProps) => {
-  //   return {
-  //     photographer:image.photographer,
-  //     photographer_url:image.photographer_url,
-  //     src:image.src,
-  //     alt:image.alt
-  //   }
-  // });
 
-
-  // return res.send(images);
 };
 
 export default getImages;

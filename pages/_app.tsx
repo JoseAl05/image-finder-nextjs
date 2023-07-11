@@ -2,7 +2,8 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import type { DehydratedState } from '@tanstack/react-query';
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { useState } from 'react'
+import { useState } from 'react';
+import { ThemeProvider } from "next-themes";
 
 
 
@@ -14,7 +15,9 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
     <>
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
-          <Component {...pageProps} />
+          <ThemeProvider enableSystem={true} attribute="class">
+            <Component {...pageProps} />
+          </ThemeProvider>
         </Hydrate>
       </QueryClientProvider>
     </>
